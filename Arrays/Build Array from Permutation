@@ -1,0 +1,8 @@
+https://leetcode.com/problems/build-array-from-permutation/submissions/
+
+class Solution:
+    def buildArray(self, nums: List[int]) -> List[int]:
+        y = []
+        for i in nums:
+            y.append(nums[i])
+        return y
