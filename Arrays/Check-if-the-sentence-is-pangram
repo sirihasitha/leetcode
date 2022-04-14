@@ -1,0 +1,14 @@
+https://leetcode.com/problems/check-if-the-sentence-is-pangram/submissions/
+
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        ls= [0] * 26
+        for i in sentence:
+            ls[ord(i) - 97] += 1
+            
+        return all(ls)
+        
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        return len(set(sentence)) == 26
+        
