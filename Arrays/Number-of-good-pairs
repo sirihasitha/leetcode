@@ -1,0 +1,28 @@
+https://leetcode.com/problems/number-of-good-pairs/
+
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        c = 0
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                if nums[i] == nums[j] and i<j:
+                    c+=1
+        return c
+        
+        
+        
+better approach
+
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        ans = 0
+        dicts = {}
+        for i in nums:
+            if i not in dicts:
+                dicts[i] = 0
+            dicts[i] += 1
+        
+        for i in dicts:
+            n = dicts[i]
+            ans += n * (n-1) // 2
+        return ans
