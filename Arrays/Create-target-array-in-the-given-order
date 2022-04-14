@@ -16,3 +16,16 @@ class Solution:
                 
                 ls[j] = i
         return ls
+
+
+
+class Solution:
+    def createTargetArray(self, nums: List[int], index: List[int]) -> List[int]:
+        target = []
+
+        for i in range(len(nums)):
+            head = target[:index[i]]
+            tail = target[index[i]:]
+            head.append(nums[i])
+            target = head + tail
+        return target
