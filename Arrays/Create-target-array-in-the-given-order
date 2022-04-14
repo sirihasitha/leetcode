@@ -1,0 +1,18 @@
+https://leetcode.com/problems/create-target-array-in-the-given-order/
+
+class Solution:
+    def createTargetArray(self, nums: List[int], index: List[int]) -> List[int]:
+        ls = [] 
+        for i,j in zip(nums,index):
+
+            if j == len(ls):
+                ls.append(nums[j])
+
+            else:
+                ls.append(0)
+
+                for k in range(len(ls)-1,j,-1):
+                    ls[k] = ls[k-1]
+                
+                ls[j] = i
+        return ls
