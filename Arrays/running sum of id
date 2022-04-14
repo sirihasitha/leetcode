@@ -1,0 +1,9 @@
+https://leetcode.com/problems/running-sum-of-1d-array/submissions/
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+        tot = 0
+        y = []
+        for i in nums:
+            tot += i
+            y.append(tot)
+        return y
