@@ -1,0 +1,17 @@
+https://leetcode.com/problems/squares-of-a-sorted-array/
+
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        rp = len(nums)-1
+        lp = 0
+        arr = [0] * len(nums)
+        z = -1
+        while lp <= rp:
+            if abs(nums[rp]) >= abs(nums[lp]):
+                arr[z] = nums[rp] * nums[rp]
+                rp -= 1
+            else:
+                arr[z] = nums[lp] * nums[lp]
+                lp += 1
+            z  -= 1
+        return arr
